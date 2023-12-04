@@ -1,0 +1,572 @@
+/* Define root-level variables for color palette */
+:root {
+	--red: #ff3838;
+	--white: #ffffff;
+	--black: #000000;
+
+	--red-one: #CB356B;
+	--red-two: #BD3F32;
+
+	--green-one: #56ab2f;
+	--green-two: #94d049;
+
+	--black-one: #232526;
+	--black-two: #70767b;
+
+	--blue-one: #021B79;
+	--blue-two: #0575E6;
+
+	--silver: #bdc3c7;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+/* Universal reset and font settings */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+/* Background color classes */
+.bg-red {
+	background-color: var(--red);
+}
+
+.bg-white {
+	background-color: var(--white);
+}
+
+.bg-black {
+	background-color: var(--black);
+}
+
+.bg-blue {
+	background-color: var(--blue-one);
+}
+
+.bg-green {
+	background-color: var(--green-one);
+}
+/* Body and HTML settings */
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Flexbox row settings */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.row:after, .row:before {
+	box-sizing: border-box;
+}
+
+/* Column size */
+.col-6 {
+	width: 50%;
+	position: relative;
+}
+
+/* Slider settings */
+.slider {
+	overflow: hidden;
+	height: 500%;
+}
+
+/* Set full height */
+.fullheight {
+	height: 100vh;
+}
+
+/* Product image settings */
+.product-img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+/* Image wrapper settings */
+.img-wrapper img {
+	height: auto;
+	width: 80%;
+	transform: rotate(-35deg);
+}
+
+/* More images settings */
+.more-images {
+	position: absolute;
+	right: 90px;
+	top: 50%;
+}
+
+/* Styling for individual more images */
+.more-images-item {
+	height: fit-content;
+	border-radius: 15px;
+	overflow: hidden;
+	margin: 5px 0;
+}
+
+.more-images-item img {
+	height: auto;
+	width: 80px;
+	border-radius: 15px;
+	transition: 1s;
+}
+
+/* Hover effect on more images */
+.more-images-item:hover img {
+	transform: scale(1.5);
+}
+
+.more-images-item:hover {
+	cursor: pointer;
+}
+
+/* Product information section settings */
+.product-info {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	padding: 0 10%;
+	color: var(--silver);
+}
+
+/* Wrapper for product information */
+.info-wrapper {
+	margin: auto;
+	position: relative;
+	text-align: right;
+}
+
+/* Product name settings */
+.product-name h3 {
+	font-weight: 800;
+	font-size:xx-large;
+	color: var(--black);
+}
+
+/* Product price settings */
+.product-price {
+	font-weight: 900;
+	font-size: xx-large;
+	color: var(--black);
+}
+
+/* Product price span settings */
+.product-price span {
+	font-size: large;
+	color: var(--black-two);
+}
+
+/* Product size settings */
+.product-size {
+	margin: 20px 0;
+}
+
+/* Wrapper for size selection */
+.size-wrapper {
+	display: flex;
+	flex-flow: row-reverse;
+	padding: 5px;
+}
+
+/* Individual size settings */
+.size-wrapper div {
+	font-weight: 900;
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	padding: 13px;
+	border: 2px solid var(--silver);
+	color: var(--silver);
+}
+
+/* Active size */
+.size-wrapper div.active {
+	border: 2px solid var(--black);
+	color: var(--black);
+}
+
+/* Hover effect on size */
+.size-wrapper div:hover {
+	border: 2px solid var(--black);
+	color: var(--black);
+	cursor: pointer;
+}
+
+/* Wrapper for color selection */
+.color-wrapper {
+	display: flex;
+	flex-flow: row-reverse;
+	padding: 5px;
+}
+
+/* Individual color settings */
+.color-wrapper > div {
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	padding: 3px;
+	border: 2px solid var(--silver);
+	background-color: var(--silver);
+}
+
+/* Active color */
+.color-wrapper > div.active {
+	border: 2px solid var(--black);
+}
+
+/* Hover effect on color */
+.color-wrapper > div:hover {
+	cursor: pointer;
+	border: 2px solid var(--black);
+}
+
+/* Color circle settings */
+.color-wrapper > div >div {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+/* Product description settings */
+.product-description {
+	margin: 60px 0;
+	text-align: justify;
+	font-weight: 600;
+}
+
+/* Button settings */
+.button > button {
+	font-weight: 700;
+	margin-left: 220px;
+	font-size: medium;
+	padding: 15px 60px;
+	border-radius: 30px;
+	border: 2px solid var(--black);
+	background-color: var(--white);
+	color: var(--black);
+	transition: .5s;
+}
+
+/* Hover effect on button */
+.button > button:hover {
+	cursor: pointer;
+	/* background-color: #BD3F32; */
+	background-color: #000000;
+	color: var(--white);
+	transform: translateY(-7px);
+}
+.button1 {
+	border-radius: 50%;
+}
+.size_button{
+	font-weight: 700;
+	margin-left: 220px;
+	font-size: medium;
+	padding: 15px 60px;
+	border-radius: 30px;
+	border: 2px solid var(--black);
+	background-color: var(--white);
+	color: var(--black);
+	transition: .5s;
+}
+.size_button > button:hover {
+	cursor: pointer;
+	background-color: #BD3F32;
+	color: var(--white);
+	transform: translateY(-7px);
+}
+
+/* Image column settings */
+.img-col {
+	border-bottom-left-radius: 100%;
+}
+
+/* Slide control settings */
+.slide-control {
+	display: flex;
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-25%);
+}
+
+/* Slide control individual div settings */
+.slide-control div {
+	height: 50px;
+	width: 50px;
+	margin: 10px;
+	transition: .5s;
+}
+
+/* Hover effect on slide control */
+.slide-control div:hover {
+	cursor: pointer;
+	transform: translateY(-30px);
+	border-bottom: 2px solid var(--black);
+}
+
+/* Slide control image settings */
+.slide-control div img {
+	height: auto;
+	width: 100%;
+	filter: grayscale(100%);
+	transform: rotate(-45deg);
+}
+
+/* Hover effect on slide control image */
+.slide-control div:hover img {
+	filter: unset;
+}
+
+/* Active slide control image settings */
+.slide-control div.active img {
+	filter: unset;
+}
+
+/* Active slide control div settings */
+.slide-control div.active {
+	border-bottom: 2px solid var(--black);
+}
+
+/* Modal settings */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal content settings */
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+
+/* Modal content animation */
+.modal-content {
+	animation-name: zoom;
+	animation-duration: .6s;
+}
+
+/* Zoom animation settings */
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	} to {
+		transform: scale(1);
+	}
+}
+
+/* Close button settings */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: var(--white);
+	font-size: 40px;
+	font-weight: 900;
+	transition: .3s;
+}
+
+/* Hover effect on close button */
+.close:hover, .close:focus {
+	color: var(--silver);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Navbar settings */
+.navbar {
+	background-color: transparent;
+	padding: 10px 90px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	display: flex;
+}
+
+/* Navbar links settings */
+.navbar a {
+	float: left;
+	color: var(--white);
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 900;
+	padding:12px;
+	text-transform: uppercase;
+}
+
+/* Navbar logo settings */
+.navbar .logo {
+	font-size: 30px;
+	flex: 1;
+	color: var(--black);
+}
+
+/* Navbar right side links settings */
+.navbar-right a:hover {
+	color: var(--black);
+	border-bottom: 2px solid var(--black);
+}
+
+/* Active link in navbar settings */
+.navbar-right a.active {
+	color: var(--black);
+	border-bottom: 2px solid var(--black);
+}
+
+/* Navbar right side links transition settings */
+.navbar-right a {
+	transition: .5s;
+}
+
+/* Cart icon settings */
+.cart {
+	position: relative;
+}
+
+/* Cart icon size settings */
+.cart i {
+	font-size: x-large;
+}
+
+/* Badge settings for cart item count */
+.badge {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	font-size: 12px;
+	background-color: var(--red);
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	text-align: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+/* Animation section */
+
+/* Right-to-left animation */
+.right-to-left {
+	transition: 1s;
+	transform: translateX(100%);
+}
+
+/* Active right-to-left animation */
+.active .right-to-left {
+	transform: translateX(0);
+}
+
+/* Bottom-up animation */
+.bottom-up {
+	transition: 1s;
+	transform: translateY(100vh);
+}
+
+/* Active bottom-up animation */
+.active .bottom-up {
+	transform: translateY(0);
+}
+
+/* Left-to-right animation */
+.left-to-right {
+	transition: 1s;
+	transform: translateX(-150%);
+}
+
+/* Active left-to-right animation */
+.active .left-to-right {
+	transition: 1s;
+	transform: translateX(0);
+}
+
+/* Delay for more images items */
+.more-images-item:nth-child(1) {
+	transition-delay: .2s;
+}
+
+.more-images-item:nth-child(2) {
+	transition-delay: .4s;
+}
+
+.more-images-item:nth-child(3) {
+	transition-delay: .6s;
+}
+
+.more-images-item:nth-child(4) {
+	transition-delay: .8s;
+}
+
+/* Delay for info wrapper children */
+.info-wrapper > div:nth-child(1) {
+	transition-delay: .2s;
+}
+
+.info-wrapper > div:nth-child(2) {
+	transition-delay: .4s;
+}
+
+.info-wrapper > div:nth-child(3) {
+	transition-delay: .6s;
+}
+
+.info-wrapper > div:nth-child(4) {
+	transition-delay: .8s;
+}
+
+.info-wrapper > div:nth-child(5) {
+	transition-delay: 1s;
+}
+
+.info-wrapper > div:nth-child(6) {
+	transition-delay: 1.2s;
+}
+
+/* Bounce animation */
+.bounce {
+	animation-name: bounce;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	} 50% {
+		transform: translateY(-50px);
+	} 100% {
+		transform: translateY(0);
+	}
+}
