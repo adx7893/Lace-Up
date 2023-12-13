@@ -15,7 +15,73 @@ setTimeout(() => {
 	slideControlItems[slideIndex].classList.add('active')
 	slides[slideIndex].classList.add('active')
 }, 500)
+// for size buttons
+// Get all size elements
+const sizeButtons = document.querySelectorAll('.size');
 
+// Function to handle click event
+function handleSizeClick(event) {
+    // Remove 'active' class from all size buttons
+    sizeButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked size button
+    event.target.classList.add('active');
+}
+
+// Add click event listener to each size button
+sizeButtons.forEach(button => {
+    button.addEventListener('click', handleSizeClick);
+});
+
+//
+
+//for showing the added items
+// Get the "Add to cart" buttons
+const addToCartButtons = document.querySelectorAll('#add-to-cart');
+
+// Function to handle adding items to the cart
+function addToCart(event) {
+    const productName = event.target.closest('.product-info').querySelector('.product-name h3').innerText;
+    const productPrice = event.target.closest('.product-info').querySelector('.product-price').innerText;
+
+    // Create an object representing the item to be added to the cart
+    const item = {
+        name: productName,
+        price: productPrice
+        // You can add more details here if needed (size, color, etc.)
+    };
+
+    // Retrieve the existing cart items from localStorage or initialize an empty array
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the new item to the cart
+    cartItems.push(item);
+
+    // Save the updated cart items to localStorage
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    // Update the cart count in the navbar
+    updateCartCount();
+}
+
+// Function to update the cart count in the navbar
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCount.textContent = cartItems.length;
+}
+
+// Attach click event listeners to "Add to cart" buttons
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCart);
+});
+
+// Update cart count on page load
+updateCartCount();
+
+//
 // Selecting the elements
 const addToCartBtn = document.getElementById('add-to-cart');
 const cartCount = document.getElementById('cart-count');

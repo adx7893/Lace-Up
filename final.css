@@ -86,6 +86,13 @@ body, html {
 	height: 100vh;
 }
 
+/* Add specific styles to the active class */
+.size.active {
+    background-color:  lightgray; /* Change to your desired active button style */
+    /* color: red; Change to your desired active button text color */
+}
+
+
 /* Product image settings */
 .product-img {
 	position: absolute;

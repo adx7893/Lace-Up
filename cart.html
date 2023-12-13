@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+<body>
+
+    <h1>Shopping Cart</h1>
+
+    <ul id="cart-items">
+        <!-- Cart items will be displayed here -->
+    </ul>
+
+    <script>
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const cartList = document.getElementById('cart-items');
+
+        // Display cart items
+        cartItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - Price: ${item.price}`;
+            cartList.appendChild(listItem);
+        });
+    </script>
+
+</body>
+</html>
